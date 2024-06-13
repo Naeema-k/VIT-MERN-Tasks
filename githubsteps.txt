@@ -1,0 +1,9 @@
+1: create a repo in github
+2: give the following commands
+    * git init
+    * got add .
+    * git commit -m "your message"
+    * git branch -m main
+    * git remote add origin "provide the link of your github repo"
+    * git push origin main
+    
