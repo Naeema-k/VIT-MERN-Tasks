@@ -3,109 +3,222 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
+    <title>HTML-Task-5</title>
     <style>
-      table,
-      th,
-      tr,
-      td {
-        width: 100%;
-        border: 1px solid black;
+      table {
         border-collapse: collapse;
+        width: 100%;
       }
-      input {
-        width: 95%;
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
       }
-      .param {
-        width: 20%;
+
+      th {
+        text-align: left;
+        font-weight: bold;
       }
-      #langSelect {
-        display: flex;
+
+      textarea {
+        width: 100%;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-input {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        align-items: left;
+        text-align: left;
       }
     </style>
   </head>
   <body>
-    <h2 style="text-align: center; color: blue">Registration form</h2>
-    <table>
-      <form>
+    <form>
+      <h2>Registration Form</h2>
+      <table>
         <tr>
-          <td class="param">First Name</td>
-          <td><input type="text" /></td>
+          <th>First Name:</th>
+          <td>
+            <input
+              class="form-input"
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+            />
+          </td>
         </tr>
         <tr>
-          <td class="param">Last Name</td>
-          <td><input type="text" /></td>
+          <th>Last Name:</th>
+          <td>
+            <input
+              class="form-input"
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+            />
+          </td>
         </tr>
-        <tr></tr>
         <tr>
-          <td class="param">Email</td>
-          <td><input type="text" /></td>
+          <th>Email:</th>
+          <td>
+            <input
+              class="form-input"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </td>
         </tr>
         <tr>
-          <td class="param">Password</td>
-          <td><input type="text" /></td>
+          <th>Password:</th>
+          <td>
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              required
+            />
+          </td>
         </tr>
         <tr>
-          <td class="param">Re-enter Password</td>
-          <td><input type="text" /></td>
+          <th>Re-enter Password:</th>
+          <td>
+            <input
+              class="form-input"
+              type="password"
+              id="reEnterPassword"
+              name="reEnterPassword"
+              required
+            />
+          </td>
         </tr>
-        <tr rowspan="2">
-          <td class="param">Gender:</td>
-          <td><input type="radio" name="Gender" />Male</td>
+        <tr>
+          <th>Gender:</th>
+          <td>
+            <input
+              class="form-input"
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+            />
+            <label for="male">Male</label>
+          </td>
         </tr>
         <tr>
           <td></td>
-          <td><input type="radio" name="Gender" />Female</td>
-        </tr>
-        <tr>
-          <td class="param">Age:</td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td class="param">Phone Number</td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td class="param">Address</td>
-          <td><textarea rows="4" cols="50"></textarea>></td>
-        </tr>
-        <tr>
-          <td class="param">State</td>
-          <td><input type="text" /></td>
-        </tr>
-        <tr>
-          <td class="param">Country</td>
           <td>
-            <select>
-              <option value="India">Choose your country</option>
-            </select>
+            <input
+              class="form-input"
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+            />
+            <label for="female">Female</label>
           </td>
         </tr>
         <tr>
-          <td class="param" id="lang">Languages known</td>
-          <td id="langSelect">
-            <input type="checkbox" name="Subjects" />English
-            <input type="checkbox" name="Subjects" />kannada
-            <input type="checkbox" name="Subjects" />Hindi
-            <input type="checkbox" name="Subjects" />Telugu
+          <th>Phone Number:</th>
+          <td>
+            <input
+              class="form-input"
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+            />
           </td>
         </tr>
         <tr>
-          <td class="param">
-            <input type="checkbox" />
-            <label>Hereby I declare all the given details are true</label>
+          <th>Age:</th>
+          <td>
+            <input class="form-input" type="number" id="age" name="age" />
           </td>
         </tr>
-        <div class="terms">
-          <tr>
-            <td class="param"></td>
-            <td>
-              Log in to <a href="https://codemithra.com/">Ethnus</a>website
-            </td>
-          </tr>
-        </div>
-      </form>
-    </table>
-    <button type="button">Register</button>
+        <tr>
+          <th>Address:</th>
+          <td>
+            <textarea id="address" name="address" rows="4" cols="50"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>State:</th>
+          <td>
+            <input class="form-input" type="text" id="state" name="state" />
+          </td>
+        </tr>
+        <tr>
+          <th>Country:</th>
+          <td>
+            <input class="form-input" type="text" id="country" name="country" />
+          </td>
+        </tr>
+        <tr>
+          <th>Languages Known:</th>
+          <td>
+            <input
+              class="form-input"
+              type="checkbox"
+              id="english"
+              name="languages"
+              value="english"
+            />
+            <label for="english">English</label>
+            <input
+              class="form-input"
+              type="checkbox"
+              id="kannada"
+              name="languages"
+              value="kannada"
+            />
+            <label for="kannada">Kannada</label>
+            <input
+              class="form-input"
+              type="checkbox"
+              id="hindi"
+              name="languages"
+              value="hindi"
+            />
+            <label for="hindi">Hindi</label>
+            <input
+              class="form-input"
+              type="checkbox"
+              id="telugu"
+              name="languages"
+              value="telugu"
+            />
+            <label for="telugu">Telugu</label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              class="form-input"
+              type="checkbox"
+              id="terms"
+              name="terms"
+              required
+            />
+            <label for="terms"
+              >Hereby I declare all the given details are true</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center">
+            <button type="submit">Register</button>
+          </td>
+        </tr>
+      </table>
+    </form>
   </body>
 </html>
