@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>csstask5</title>
+    <style>
+      body {
+        background-color: rgb(206, 211, 77);
+        color: purple;
+      }
+      h1 {
+        margin-bottom: 30px;
+      }
+      p {
+        margin: 4px 0;
+      }
+
+      .para3::after {
+        content: "";
+        height: 0.5px;
+        width: 100%;
+        background-color: purple;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .text-content {
+        margin-left: 250px;
+      }
+      .sidenav {
+        margin-top: 200px;
+        margin-left: 20px;
+      }
+
+      #mysidenav a {
+        position: absolute;
+        padding: 6px;
+        width: 180px;
+        text-decoration: none;
+        font-size: 17px;
+        color: blue;
+        background-image: linear-gradient(
+          to right,
+          white 0%,
+          white 85%,
+          black 85%,
+          black 100%
+        );
+      }
+
+      /* unvisited link */
+      #mysidenav a:link {
+        color: blue;
+      }
+
+      /* visited link
+      #mysidenav a:visited {
+        color: purple;
+      } */
+
+      /* mouse over link */
+      #mysidenav a:hover {
+        color: purple;
+      }
+
+      #home {
+        top: 50px;
+      }
+      #musings {
+        top: 90px;
+      }
+
+      #town {
+        top: 130px;
+      }
+
+      #links {
+        top: 170px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-content">
+      <h1>My first styled page</h1>
+      <p class="para1">Welcome to my styled page!</p>
+      <br />
+      <p class="para2">
+        It lacks images, but at least it has style. And it has links, even if
+        they don't go anywhere...
+      </p>
+      <br />
+      <p class="para3">There should be more here, but I don't know what yet.</p>
+
+      <p class="para4">
+        Made 5 April 2004 <br />
+        by myself.
+      </p>
+    </div>
+
+    <div class="sidenav" id="mysidenav">
+      <a href="#" id="home">Home page</a>
+      <a href="#" id="musings">Musings</a>
+      <a href="#" id="town">My town</a>
+      <a href="#" id="links">Links</a>
+    </div>
+  </body>
+</html>

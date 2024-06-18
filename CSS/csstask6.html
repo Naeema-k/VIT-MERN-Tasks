@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        width: 15%;
+      }
+      .form-section {
+        width: 500px;
+        margin: 50px auto;
+        border: 0;
+        padding: 0;
+        border-radius: 5px;
+      }
+      .form {
+        margin-bottom: 15px;
+        margin-top: 0;
+        width: 100%;
+        height: 30px;
+      }
+      #username,
+      #pass {
+        margin-bottom: 0;
+        font-weight: bold;
+      }
+
+      #username-inp,
+      #pass-inp {
+        width: 100%;
+        border: 1px solid rgb(218, 217, 217);
+      }
+      #login-btn-inp {
+        background-color: rgb(52, 165, 92);
+        color: white;
+        border: 0;
+      }
+      #cancel-btn {
+        display: flex;
+        float: left;
+        margin-top: 5px;
+        margin-right: 124px;
+      }
+      #cancel-btn-btn {
+        height: 40px;
+        width: 80px;
+        color: white;
+        background-color: red;
+        border: 0;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      #forgot-btn {
+        display: flex;
+        float: right;
+        margin-top: 15px;
+        margin-right: 0;
+      }
+      #forgot-link {
+        color: black;
+      }
+
+      #last {
+        background-color: #dad7d7;
+        height: 50px;
+        border-top: #afadad;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image">
+      <img src="../images/woman.png" />
+    </div>
+    <div class="form-section">
+      <form>
+        <div class="form" id="username">Username</div>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          class="form"
+          id="username-inp"
+        />
+
+        <div class="from" id="pass">Password</div>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="form"
+          id="pass-inp"
+        />
+
+        <div class="form" id="login-btn">
+          <button class="form" id="login-btn-inp">Login</button>
+        </div>
+
+        <div class="form" id="rem">
+          <input type="checkbox" id="rem-inp" />
+          <label id="rem-lab">Remember me</label>
+        </div>
+
+        <div class="form" id="last">
+          <span id="cancel-btn"
+            ><button id="cancel-btn-btn">Cancel</button></span
+          >
+          <span id="forgot-btn"
+            ><a href="#" id="forgot-link">Forgot password?</a></span
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

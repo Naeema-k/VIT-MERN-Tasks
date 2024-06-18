@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Form Pink</title>
+    <style>
+      .outermost {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+      }
+      .outer-container {
+        width: 700px;
+        height: 400px;
+        background-color: rgb(134, 16, 65);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+      }
+      .inner-box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .content {
+        display: flex;
+        width: 450px;
+        height: 400px;
+        background-color: rgb(71, 16, 44);
+      }
+      .form {
+        width: 100%;
+        color: white;
+        margin-top: 25px;
+        margin-left: 25px;
+        line-height: 25px;
+      }
+      .form input[type="text"] {
+        width: 205px;
+      }
+      .form input[type="email"] {
+        width: 205px;
+      }
+      .form input[type="password"] {
+        width: 205px;
+      }
+      #button {
+        color: rgb(99, 18, 18);
+        margin-top: 0;
+        margin-left: 0;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outermost">
+      <div class="outer-container">
+        <div class="inner-box">
+          <div class="content">
+            <div class="inner-container">
+              <div class="form">
+                <table>
+                  <form>
+                    <tr>
+                      <td>
+                        <label class="form" for="name">Name:</label><br />
+                      </td>
+                      <td>
+                        <input
+                          class="form-inp"
+                          placeholder="your name"
+                          type="text"
+                          id="name"
+                          name="name"
+                        /><br />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="form" for="email">Email:</label><br />
+                      </td>
+                      <td>
+                        <input
+                          class="form-inp"
+                          placeholder="your email"
+                          type="email"
+                          id="email"
+                          name="email"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label class="form" for="pass">Password:</label></td>
+                      <td>
+                        <input
+                          class="form-inp"
+                          type="Password"
+                          id="pass"
+                          name="pass"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="form" for="phno">Phone Number:</label>
+                      </td>
+                      <td>
+                        <input
+                          class="form-inp"
+                          type="text"
+                          id="phno"
+                          name="phno"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label class="form" for="address">Gender:</label></td>
+                      <td>
+                        <label>Male:</label>
+                        <input type="radio" id="gender" name="gender" />
+                        <label>Female:</label>
+                        <input type="radio" id="gender" name="gender" />
+                        <label>Other:</label>
+                        <input type="radio" id="gender" name="gender" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <label class="form" for="language">Language:</label>
+                      </td>
+                      <td>
+                        <select name="language" id="language">
+                          <option value="male">Select language</option>
+                          <option value="female">English</option>
+                          <option value="female">Hindi</option>
+                          <option value="female">Bengali</option>
+                          <option value="female">Tamil</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="form" for="zip">Zip Code:</label>
+                      </td>
+                      <td>
+                        <input
+                          class="form-inp"
+                          id="zip"
+                          name="zip"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="form" for="about">About:</label>
+                      </td>
+                      <td>
+                        <textarea
+                          rows="3"
+                          cols="26"
+                          placeholder="write about yourself..."
+                          id="about"
+                          name="about"
+                        >
+Write about yourself...
+                </textarea
+                        >
+                      </td>
+                    </tr>
+                  </form>
+                </table>
+                <div class="form" id="btn-container">
+                  <button class="form" id="button" type="button">
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
