@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Task-4</title>
+  </head>
+  <body>
+    <h1>Date and Time Display</h1>
+    <button type="button" id="showDateBtn">Show Date</button>
+    <button type="button" id="showTimeBtn">Show Time</button>
+    <p id="result"></p>
+
+    <script>
+      document
+        .getElementById("showDateBtn")
+        .addEventListener("click", function () {
+          showDate();
+        });
+
+      document
+        .getElementById("showTimeBtn")
+        .addEventListener("click", function () {
+          showTime();
+        });
+
+      function showDate() {
+        let now = new Date();
+        let options = { day: "numeric", month: "long", year: "numeric" };
+        let formattedDate = `${now.getDate()}/${now.toLocaleString("default", {
+          month: "long",
+        })}/${now.getFullYear()}`;
+        document.getElementById("result").innerText = formattedDate;
+      }
+
+      function showTime() {
+        let now = new Date();
+        document.getElementById("result").innerText = now.toString();
+      }
+    </script>
+  </body>
+</html>

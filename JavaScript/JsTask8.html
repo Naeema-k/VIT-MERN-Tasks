@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        background: linear-gradient(to bottom, #f0e68c, #d3a2d3);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 700px;
+        max-height: 90vh;
+        overflow-y: auto;
+        overflow-x: auto;
+      }
+
+      h2 {
+        text-align: center;
+        color: darkblue;
+      }
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      label {
+        flex: 1;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      textarea,
+      select {
+        flex: 2;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        height: 10px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      .inline {
+        display: inline;
+        margin-right: 15px;
+      }
+
+      span {
+        color: red;
+        font-size: 12px;
+        display: none;
+        margin-left: 10px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <h2>Registration form</h2>
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" />
+        <span id="firstNameError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" />
+        <span id="lastNameError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <span id="emailError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <span id="passwordError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="rePassword">Re-enter Password</label>
+        <input type="password" id="rePassword" name="rePassword" />
+        <span id="rePasswordError">POOR OR MISMATCH</span>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male" class="inline">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female" class="inline">Female</label>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" />
+        <span id="ageError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" />
+        <span id="phoneError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address"></textarea>
+        <span id="addressError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" />
+        <span id="stateError">POOR</span>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="">Choose your country</option>
+          <!-- Add more countries as needed -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Languages known</label>
+        <input type="checkbox" id="english" name="language" value="english" />
+        <label for="english" class="inline">English</label>
+        <input type="checkbox" id="kannada" name="language" value="kannada" />
+        <label for="kannada" class="inline">Kannada</label>
+        <input type="checkbox" id="hindi" name="language" value="hindi" />
+        <label for="hindi" class="inline">Hindi</label>
+        <input type="checkbox" id="telugu" name="language" value="telugu" />
+        <label for="telugu" class="inline">Telugu</label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="declaration" name="declaration" />
+        <label for="declaration"
+          >Hereby I declare all the given details are true</label
+        >
+      </div>
+
+      <div class="form-group">
+        <a href="https://www.ethnus.com">Log in to Ethnus website</a>
+      </div>
+
+      <button type="submit">REGISTER</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Hide all error messages
+          const errorMessages = document.querySelectorAll("span");
+          errorMessages.forEach((error) => (error.style.display = "none"));
+
+          // Validation flags
+          let isValid = true;
+
+          // First Name validation
+          const firstName = document.getElementById("firstName").value;
+          if (firstName.trim() === "") {
+            document.getElementById("firstNameError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Last Name validation
+          const lastName = document.getElementById("lastName").value;
+          if (lastName.trim() === "") {
+            document.getElementById("lastNameError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Email validation
+          const email = document.getElementById("email").value;
+          const emailPattern =
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (!emailPattern.test(email)) {
+            document.getElementById("emailError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Password validation
+          const password = document.getElementById("password").value;
+          if (password.trim() === "") {
+            document.getElementById("passwordError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Re-enter Password validation
+          const rePassword = document.getElementById("rePassword").value;
+          if (rePassword !== password) {
+            document.getElementById("rePasswordError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Age validation
+          const age = document.getElementById("age").value;
+          if (age.trim() === "" || isNaN(age) || age <= 0) {
+            document.getElementById("ageError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Phone Number validation
+          const phone = document.getElementById("phone").value;
+          const phonePattern = /^[0-9]{10}$/;
+          if (!phonePattern.test(phone)) {
+            document.getElementById("phoneError").style.display = "inline";
+            isValid = false;
+          }
+
+          // Address validation
+          const address = document.getElementById("address").value;
+          if (address.trim() === "") {
+            document.getElementById("addressError").style.display = "inline";
+            isValid = false;
+          }
+
+          // State validation
+          const state = document.getElementById("state").value;
+          if (state.trim() === "") {
+            document.getElementById("stateError").style.display = "inline";
+            isValid = false;
+          }
+
+          // If all validations pass, submit the form
+          if (isValid) {
+            alert("Form submitted successfully!");
+          }
+        });
+    </script>
+  </body>
+</html>

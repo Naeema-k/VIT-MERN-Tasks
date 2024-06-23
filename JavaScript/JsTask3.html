@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Task-3</title>
+  </head>
+  <body>
+    <h1>Multiplication and Division Calculator</h1>
+    <form id="calcForm">
+      <label for="number1">Enter 1st number:</label>
+      <input type="number" id="number1" name="number1" required />
+      <br /><br />
+      <label for="number2">Enter 2nd number:</label>
+      <input type="number" id="number2" name="number2" required />
+      <br /><br />
+      <button type="button" id="multiplyBtn">Multiply</button>
+      <button type="button" id="divideBtn">Divide</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      document
+        .getElementById("multiplyBtn")
+        .addEventListener("click", function () {
+          performCalculation("multiply");
+        });
+
+      document
+        .getElementById("divideBtn")
+        .addEventListener("click", function () {
+          performCalculation("divide");
+        });
+
+      function performCalculation(operation) {
+        // Get input values
+        let number1 = parseFloat(document.getElementById("number1").value);
+        let number2 = parseFloat(document.getElementById("number2").value);
+
+        // Check for valid input
+        if (isNaN(number1) || isNaN(number2)) {
+          alert("Please enter valid numbers");
+          return;
+        }
+
+        let result;
+        if (operation === "multiply") {
+          result = "Multiplication Result: " + number1 * number2;
+        } else if (operation === "divide") {
+          result =
+            number2 !== 0
+              ? "Division Result: " + number1 / number2
+              : "Division Result: undefined (division by zero)";
+        }
+
+        // Display result
+        document.getElementById("result").innerText = result;
+      }
+    </script>
+  </body>
+</html>

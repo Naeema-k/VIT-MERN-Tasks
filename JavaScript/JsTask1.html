@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Task-1</title>
+  </head>
+  <body>
+    <h1>Reverse a Number</h1>
+    <form id="numberForm">
+      <label for="numberInput">Enter a number:</label>
+      <input type="text" id="numberInput" name="numberInput" required />
+      <button type="submit">Reverse</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      document
+        .getElementById("numberForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+
+          let numberInput = document.getElementById("numberInput").value;
+
+          if (isNaN(numberInput)) {
+            alert("Please enter a valid number");
+            return;
+          }
+
+          let reversedNumber = reverseNumber(numberInput);
+
+          document.getElementById("result").innerText =
+            "Reversed Number: " + reversedNumber;
+        });
+
+      function reverseNumber(num) {
+        // Convert number to string
+        let str = num.toString();
+
+        // Split string into an array, reverse the array, and join it back to a string
+        let reversedStr = str.split("").reverse().join("");
+
+        // Convert the reversed string back to a number
+        let reversedNum = parseInt(reversedStr, 10);
+
+        return reversedNum;
+      }
+    </script>
+  </body>
+</html>

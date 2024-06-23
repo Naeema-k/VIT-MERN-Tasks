@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Task-7</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      #train {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: auto;
+      }
+
+      .controls {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img id="train" src="train.png" alt="Train" />
+      <div class="controls">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const train = document.getElementById("train");
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        let animation;
+
+        startButton.addEventListener("click", function () {
+          train.style.animation = "moveTrain 5s linear infinite";
+        });
+
+        stopButton.addEventListener("click", function () {
+          train.style.animation = "none";
+        });
+
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(
+          `
+        @keyframes moveTrain {
+            0% { left: 0; }
+            100% { left: 100%; }
+        }
+    `,
+          styleSheet.cssRules.length
+        );
+      });
+    </script>
+  </body>
+</html>

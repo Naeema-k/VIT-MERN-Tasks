@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Task-2</title>
+  </head>
+  <body>
+    <h1>Sort String Alphabetically</h1>
+    <form id="stringForm">
+      <label for="stringInput">Enter a string:</label>
+      <input type="text" id="stringInput" name="stringInput" required />
+      <button type="submit">Sort</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      document
+        .getElementById("stringForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+
+          let stringInput = document.getElementById("stringInput").value;
+
+          if (!stringInput) {
+            alert("Please enter a valid string");
+            return;
+          }
+
+          let sortedString = sortStringAlphabetically(stringInput);
+
+          document.getElementById("result").innerText =
+            "Sorted String: " + sortedString;
+        });
+
+      function sortStringAlphabetically(str) {
+        // Convert string to lowercase, split into an array, sort the array, and join it back to a string
+        let sortedStr = str.toLowerCase().split("").sort().join("");
+        return sortedStr;
+      }
+    </script>
+  </body>
+</html>
