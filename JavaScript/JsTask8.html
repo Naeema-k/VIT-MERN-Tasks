@@ -235,7 +235,7 @@
 
           // Re-enter Password validation
           const rePassword = document.getElementById("rePassword").value;
-          if (rePassword !== password) {
+          if (rePassword.trim() === "" || rePassword !== password) {
             document.getElementById("rePasswordError").style.display = "inline";
             isValid = false;
           }
